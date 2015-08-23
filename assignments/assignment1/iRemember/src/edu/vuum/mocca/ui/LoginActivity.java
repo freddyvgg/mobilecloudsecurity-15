@@ -45,9 +45,13 @@ public class LoginActivity extends StoryActivityBase{
 	 * Get the file used for storing login credentials
 	 */
 	public static File getLoginFile (Context context) {
+		/**
+		 * MAX_SECURITY is not a constant defined by StorageUtilities. The right way to
+		 * store private data is by using StorageUtilities.SECURITY_PRIVATE
+		 */
 		return StorageUtilities.getOutputMediaFile(context, 	// Line 48
 				StorageUtilities.MEDIA_TYPE_TEXT, 
-				MAX_SECURITY, 
+				StorageUtilities.SECURITY_PRIVATE, 
 				"login.txt");
 	}
 	
